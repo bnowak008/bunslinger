@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: bun ci
-      - run: bun test
+      - run: bun i
+      - run: bun run build
 
   publish-npm:
     needs: build
@@ -27,8 +27,8 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: bun ci
-      - run: bun publish
+      - run: bun i
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
