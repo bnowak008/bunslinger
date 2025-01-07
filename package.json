@@ -3,6 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
+
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
     "test": "bun test"
   },
   "devDependencies": {
